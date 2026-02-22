@@ -1,4 +1,5 @@
 import { Quote } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const testimonials = [
   {
@@ -25,34 +26,35 @@ const TestimonialsSection = () => {
   return (
     <section className="bg-background py-24">
       <div className="container mx-auto px-6">
-        <h2 className="mb-16 text-center font-heading text-4xl font-bold uppercase text-foreground md:text-5xl">
-          Success <span className="text-gradient-gold italic">Stories</span>
-        </h2>
+        <ScrollReveal>
+          <h2 className="mb-16 text-center font-heading text-4xl font-bold uppercase text-foreground md:text-5xl">
+            Success <span className="text-gradient-gold italic">Stories</span>
+          </h2>
+        </ScrollReveal>
 
         <div className="grid gap-8 md:grid-cols-3">
-          {testimonials.map((t) => (
-            <div
-              key={t.name}
-              className="relative rounded-lg border border-border bg-card p-8 shadow-sm transition-shadow hover:shadow-lg"
-            >
-              <Quote className="absolute right-6 top-6 h-8 w-8 text-muted-foreground/20" />
-              <p className="mb-6 text-sm leading-relaxed text-muted-foreground italic">
-                "{t.quote}"
-              </p>
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary font-heading text-sm font-bold text-primary-foreground">
-                  {t.name[0]}
-                </div>
-                <div>
-                  <p className="font-heading text-sm font-bold uppercase text-card-foreground">
-                    {t.name}
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-accent">
-                    {t.since}
-                  </p>
+          {testimonials.map((t, i) => (
+            <ScrollReveal key={t.name} delay={i * 150}>
+              <div className="relative rounded-lg border border-border bg-card p-8 shadow-sm transition-shadow hover:shadow-lg h-full">
+                <Quote className="absolute right-6 top-6 h-8 w-8 text-muted-foreground/20" />
+                <p className="mb-6 text-sm leading-relaxed text-muted-foreground italic">
+                  "{t.quote}"
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary font-heading text-sm font-bold text-primary-foreground">
+                    {t.name[0]}
+                  </div>
+                  <div>
+                    <p className="font-heading text-sm font-bold uppercase text-card-foreground">
+                      {t.name}
+                    </p>
+                    <p className="text-xs uppercase tracking-wider text-accent">
+                      {t.since}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
