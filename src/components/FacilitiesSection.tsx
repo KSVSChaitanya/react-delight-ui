@@ -1,4 +1,5 @@
 import { CheckCircle } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
 import facilitiesImg from "@/assets/facilities.jpg";
 
 const features = [
@@ -13,24 +14,26 @@ const FacilitiesSection = () => {
     <section id="about" className="bg-muted py-24">
       <div className="container mx-auto px-6">
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          <div className="relative">
-            <img
-              src={facilitiesImg}
-              alt="World-class gym facilities"
-              className="w-full rounded-lg object-cover shadow-2xl"
-              loading="lazy"
-            />
-            <div className="absolute -bottom-6 left-6 rounded bg-primary px-6 py-4 text-center shadow-lg">
-              <span className="block font-heading text-3xl font-bold text-primary-foreground">
-                20,000+
-              </span>
-              <span className="text-xs uppercase tracking-wider text-primary-foreground/80">
-                Sq. Ft. Facility
-              </span>
+          <ScrollReveal>
+            <div className="relative">
+              <img
+                src={facilitiesImg}
+                alt="World-class gym facilities"
+                className="w-full rounded-lg object-cover shadow-2xl"
+                loading="lazy"
+              />
+              <div className="absolute -bottom-6 left-6 rounded bg-primary px-6 py-4 text-center shadow-lg">
+                <span className="block font-heading text-3xl font-bold text-primary-foreground">
+                  20,000+
+                </span>
+                <span className="text-xs uppercase tracking-wider text-primary-foreground/80">
+                  Sq. Ft. Facility
+                </span>
+              </div>
             </div>
-          </div>
+          </ScrollReveal>
 
-          <div>
+          <ScrollReveal delay={200}>
             <h2 className="mb-4 font-heading text-4xl font-bold uppercase text-foreground md:text-5xl">
               World-Class{" "}
               <span className="text-gradient-gold italic">Facilities</span>
@@ -56,7 +59,7 @@ const FacilitiesSection = () => {
             >
               Book a Tour
             </a>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
